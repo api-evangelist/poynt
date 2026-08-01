@@ -1,0 +1,36 @@
+# Poynt (GoDaddy Poynt)
+
+> Poynt is an open commerce platform for merchants built around smart payment terminals and the Poynt Cloud API (services.poynt.net). Developers build and distribute business apps that manage orders, transactions, customers, products, catalogs, inventory, taxes and businesses, subscribe to real-time webhooks, and tokenize card data in the browser with Poynt Collect. Authentication is OAuth 2.0 via a self-signed JWT bearer grant.
+
+## APIs
+
+- [Poynt Cloud API reference](https://docs.poynt.com/api-reference/index.html): REST API at https://services.poynt.net for orders, transactions, customers, products, catalogs, inventory, taxes, businesses and webhooks.
+
+## Docs
+
+- [App integration docs](https://docs.poynt.com/app-integration/): platform overview, developer onboarding, cloud apps, smart terminal apps, semi-integration and Poynt Collect.
+- [Developer portal](https://docs.poynt.com): entry point for payment processors, terminal OEMs, and app developers.
+- [Support center](https://support.poynt.com) and [developer forum](https://discuss.poynt.net).
+- [Status page](https://poynt.statuspage.io).
+
+## Authentication
+
+- OAuth 2.0. A self-signed JWT (signed with the app's registered RSA key) is POSTed to https://services.poynt.net/token using grant urn:ietf:params:oauth:grant-type:jwt-bearer and exchanged for a short-lived access token sent as `Authorization: Bearer <token>` with an `Api-Version: 1.2` header.
+
+## Conventions
+
+- Idempotency via the `POYNT-REQUEST-ID` header on state-changing requests.
+- Versioning via the `Api-Version` header (current 1.2).
+- JSON request/response bodies; standard HTTP status codes.
+
+## SDKs
+
+- [Node.js SDK (npm: poynt)](https://www.npmjs.com/package/poynt)
+- [Python SDK (pypi: poynt)](https://pypi.org/project/poynt/)
+- [Go client (poynt-go)](https://pkg.go.dev/github.com/poynt/poynt-go)
+- [Ruby SDK](https://github.com/poynt/poynt-ruby)
+- [GitHub organization](https://github.com/poynt)
+
+## Components
+
+- [Poynt Collect](https://docs.poynt.com/app-integration/poynt-collect/): browser JS library for secure card collection and tokenization.

@@ -1,0 +1,16 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.poynt.com/app-integration/poynt-collect/
+components:
+- family: Poynt Collect
+  kind: hosted-field / browser tokenization library
+  description: 'A JavaScript library that merchants mount on their own web payment
+    pages to securely collect card data in the browser. The form produces a one-time
+    nonce that is exchanged for a reusable payment token; sensitive card data is sent
+    directly to the GoDaddy Poynt server and never touches the merchant''s server,
+    reducing PCI scope.'
+  docs: https://docs.poynt.com/app-integration/poynt-collect/
+  capabilities:
+  - secure card data collection
+  - nonce generation
+  - card tokenization for one-time and recurring charges

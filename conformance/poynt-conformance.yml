@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.poynt.com/api-reference/index.html
+standards:
+- id: oauth2
+  conforms: true
+  evidence: OAuth 2.0 access tokens obtained via JWT bearer grant (authentication/poynt-authentication.yml)
+- id: jwt-bearer-rfc7523
+  conforms: true
+  evidence: Self-signed JWT exchanged at /token using urn:ietf:params:oauth:grant-type:jwt-bearer
+- id: idempotency
+  conforms: true
+  evidence: POYNT-REQUEST-ID idempotency header on state-changing requests
+- id: webhooks
+  conforms: true
+  evidence: /hooks endpoint registers real-time event subscriptions
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: errors use a Poynt-specific JSON error object, not application/problem+json
+- id: pci-dss
+  conforms: true
+  evidence: 'Poynt Collect tokenizes card data so sensitive PAN never touches the
+    merchant server (card-present/card-not-present processing implies PCI scope reduction);
+    no public certification page was found to cite a specific PCI DSS level.'
+- id: fhir-r4
+  conforms: false
+- id: scim2
+  conforms: false
+- id: odata
+  conforms: false

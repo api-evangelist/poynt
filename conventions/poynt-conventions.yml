@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.poynt.com/api-reference/index.html
+authentication:
+  style: oauth2-bearer
+  detail: 'OAuth 2.0 access token obtained via self-signed JWT bearer grant; sent
+    as Authorization: Bearer <access-token>.'
+  ref: authentication/poynt-authentication.yml
+idempotency:
+  supported: true
+  mechanism: header
+  header: POYNT-REQUEST-ID
+  detail: 'Clients send a unique POYNT-REQUEST-ID header on state-changing requests
+    (e.g. creating transactions/orders); Poynt uses it to de-duplicate retried requests
+    so an operation is applied at most once.'
+versioning:
+  scheme: header
+  header: Api-Version
+  current: '1.2'
+  detail: The API version is negotiated per request via the Api-Version request header.
+pagination:
+  style: cursor
+  detail: 'List endpoints (orders, transactions, customers, etc.) support paging via
+    startAt/startOffset/limit-style query parameters and return continuation links;
+    consult the api-reference for per-resource parameters.'
+error_envelope:
+  format: poynt-json
+  detail: 'Errors return standard HTTP status codes (400/401/403/404/500) with a JSON
+    body describing the error; Poynt uses its own error object shape rather than RFC
+    9457 application/problem+json.'
+  ref: errors/poynt-problem-types.yml
+media_type: application/json
+cross_links:
+  errors: errors/poynt-problem-types.yml
+  lifecycle: lifecycle/poynt-lifecycle.yml
+  authentication: authentication/poynt-authentication.yml
+  webhooks: asyncapi/poynt-webhooks.yml

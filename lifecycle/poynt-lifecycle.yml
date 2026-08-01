@@ -1,0 +1,16 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.poynt.com/api-reference/index.html
+versioning:
+  scheme: header
+  header: Api-Version
+  current: '1.2'
+  docs: https://docs.poynt.com/api-reference/index.html
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No public deprecation/sunset policy was found at capture time.
+sla:
+  url: null
+status_page: https://poynt.statuspage.io
+deprecated_operations: []

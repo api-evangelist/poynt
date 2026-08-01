@@ -1,9 +1,27 @@
 aid: poynt
-name: Poynt *
-description: 'Poynt * is a company surfaced as a portfolio company of gv, matrix-partners and added to
-  the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting
-  the enrichment pipeline.'
+name: Poynt
+description: 'Poynt (GoDaddy Poynt) is an open commerce platform for merchants built
+  around smart payment terminals and a cloud API. Its Poynt Cloud API (services.poynt.net)
+  lets developers build and distribute business apps that read and write orders, transactions,
+  customers, products, catalogs, inventory, taxes and businesses, register webhooks
+  for real-time events, and tokenize card data in the browser with Poynt Collect.
+  Authentication is OAuth 2.0 using a self-signed JWT bearer grant that is exchanged
+  for a short-lived access token. The platform serves three integration audiences:
+  payment processors, terminal OEMs, and independent app developers.'
 url: https://raw.githubusercontent.com/api-evangelist/poynt/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://poynt.com/wp-content/uploads/2021/09/poynt-logo.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -13,16 +31,88 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1
 tags:
 - Company
 - Consumer
-apis: []
+- Payments
+- Point of Sale
+- Commerce
+- Merchant Services
+- Payment Processing
+- Developer Platform
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Poynt Cloud API
+  description: 'The Poynt Cloud API lets developers manage a merchant business''s
+    orders, transactions, customers, products, catalogs, inventory and taxes, register
+    webhooks for real-time events, and collect/tokenize card data. Base host services.poynt.net;
+    OAuth 2.0 self-signed JWT bearer authentication; versioned via the Api-Version
+    header; idempotency via the POYNT-REQUEST-ID header.'
+  humanURL: https://docs.poynt.com/api-reference/index.html
+  baseURL: https://services.poynt.net
+  tags:
+  - Payments
+  - Point of Sale
+  - Orders
+  - Transactions
+  - Webhooks
+  properties:
+  - type: Documentation
+    url: https://docs.poynt.com/app-integration/
+  - type: APIReference
+    url: https://docs.poynt.com/api-reference/index.html
 common:
+- type: DomainSecurity
+  url: security/poynt-domain-security.yml
 - type: Website
   url: https://www.poynt.com
+- type: DeveloperPortal
+  url: https://docs.poynt.com
+- type: Documentation
+  url: https://docs.poynt.com/app-integration/
+- type: APIReference
+  url: https://docs.poynt.com/api-reference/index.html
+- type: GettingStarted
+  url: https://docs.poynt.com/app-integration/
+- type: Support
+  url: https://support.poynt.com
+- type: Support
+  url: https://discuss.poynt.net
+- type: GitHubOrganization
+  url: https://github.com/poynt
+- type: StatusPage
+  url: https://poynt.statuspage.io
+- type: Packages
+  url: packages/poynt-packages.yml
+- type: SDKs
+  url: packages/poynt-packages.yml
+- type: Authentication
+  url: authentication/poynt-authentication.yml
+- type: Conventions
+  url: conventions/poynt-conventions.yml
+- type: Idempotency
+  url: conventions/poynt-conventions.yml
+- type: Conformance
+  url: conformance/poynt-conformance.yml
+- type: ErrorCatalog
+  url: errors/poynt-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/poynt-lifecycle.yml
+- type: Webhooks
+  url: asyncapi/poynt-webhooks.yml
+- type: DataModel
+  url: data-model/poynt-data-model.yml
+- type: Components
+  url: components/poynt-components.yml
+- type: LLMsTxt
+  url: llms/poynt-llms.txt

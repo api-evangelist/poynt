@@ -1,0 +1,65 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.poynt.com/api-reference/index.html
+note: 'Derived from the documented Poynt Cloud API resource reference (no machine-readable
+  OpenAPI is published); relationships reflect the documented /businesses/{businessId}/*
+  path hierarchy and object references.'
+entities:
+- name: Business
+  path: /businesses/{businessId}
+  detail: The merchant account; root of nearly every resource path.
+- name: Store
+  detail: A physical/logical location under a business.
+- name: Order
+  path: /businesses/{businessId}/orders
+- name: Transaction
+  path: /businesses/{businessId}/transactions
+- name: Customer
+  path: /businesses/{businessId}/customers
+- name: Product
+  path: /businesses/{businessId}/products
+- name: Catalog
+  path: /businesses/{businessId}/catalogs
+- name: Category
+- name: Inventory
+  path: /businesses/{businessId}/inventory
+- name: Tax
+  path: /businesses/{businessId}/taxes
+- name: Hook
+  path: /hooks
+- name: CloudMessage
+- name: Receipt
+relationships:
+- from: Business
+  to: Store
+  type: has_many
+- from: Business
+  to: Order
+  type: has_many
+- from: Order
+  to: Transaction
+  type: has_many
+  via: orderId
+- from: Order
+  to: Customer
+  type: belongs_to
+  via: customerId
+- from: Transaction
+  to: Customer
+  type: belongs_to
+  via: customerId
+- from: Catalog
+  to: Product
+  type: has_many
+- from: Product
+  to: Category
+  type: belongs_to
+- from: Product
+  to: Inventory
+  type: has_one
+- from: Business
+  to: Tax
+  type: has_many
+- from: Business
+  to: Hook
+  type: has_many

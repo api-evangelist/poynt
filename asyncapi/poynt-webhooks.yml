@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.poynt.com/api-reference/index.html
+spec_type: Webhooks
+delivery:
+  mechanism: HTTP POST callback
+  registration: POST https://services.poynt.net/hooks
+  detail: 'Apps subscribe to a business''s real-time events by creating a hook that
+    names the event(s) of interest and a delivery URL; Poynt POSTs an event payload
+    to that URL when a matching event occurs. Hooks are managed via the /hooks endpoint
+    (create/update/delete).'
+event_domains:
+- resource: transaction
+  detail: authorization, capture, void, refund and other transaction lifecycle changes
+- resource: order
+  detail: order created/updated/closed events
+- resource: customer
+  detail: customer created/updated events
+- resource: product
+  detail: catalog product changes
+- resource: catalog
+  detail: catalog changes
+- resource: inventory
+  detail: inventory/stock adjustments
+- resource: business
+  detail: business/store configuration changes
+notes: 'The exact event-type enum strings are enumerated in the /hooks section of the
+  Poynt api-reference; they are not reproduced verbatim here to avoid transcription
+  error. The webhook surface is real and documented; no published AsyncAPI document
+  exists, so this is captured as a Webhooks catalog rather than an AsyncAPI spec.'

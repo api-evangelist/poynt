@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.poynt.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  7 21:53:44 2026 GMT
+  hsts: true
+  hsts_max_age: 3628800
+- host: docs.poynt.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 16 19:30:19 2026 GMT
+  hsts: false
+- host: services.poynt.net
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Sep  8 19:43:06 2026 GMT
+  hsts: null
+domains:
+- domain: poynt.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: poynt.net
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.poynt.com/app-integration/
+docs: https://docs.poynt.com/api-reference/index.html
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - jwt-bearer
+  api_key_in: []
+schemes:
+- name: OAuth2 self-signed JWT bearer
+  type: oauth2
+  scheme: bearer
+  description: 'Apps authenticate with a self-signed JWT (signed with the application''s
+    RSA private key registered with Poynt) which is POSTed to the token endpoint and
+    exchanged for a short-lived OAuth 2.0 access token. The access token is then sent
+    as an Authorization: Bearer <access-token> header on every API request, alongside
+    an Api-Version header.'
+  token_url: https://services.poynt.net/token
+  grant_type: urn:ietf:params:oauth:grant-type:jwt-bearer
+  request_headers:
+  - 'Authorization: Bearer <access-token>'
+  - 'Api-Version: 1.2'
+  - 'Content-Type: application/json'
+  sources:
+  - docs.poynt.com/api-reference
+notes: 'Poynt uses application-level authorization (an app is granted access to a
+  merchant business at onboarding) rather than fine-grained OAuth scopes, so there
+  is no published OAuth scope reference.'

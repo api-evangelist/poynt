@@ -1,0 +1,27 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.poynt.com/api-reference/index.html
+format: poynt-json
+envelope: JSON error object returned with the HTTP status; not RFC 9457 problem+json.
+problems:
+- status: 400
+  title: Bad Request
+  detail: The request was malformed or contained invalid parameters.
+- status: 401
+  title: Unauthorized
+  detail: Missing, expired, or invalid OAuth 2.0 access token.
+- status: 403
+  title: Forbidden
+  detail: The authenticated app is not authorized to access the requested business
+    resource.
+- status: 404
+  title: Not Found
+  detail: The requested resource (business, order, transaction, customer, product,
+    hook, etc.) does not exist.
+- status: 500
+  title: Internal Server Error
+  detail: An unexpected error occurred on the Poynt platform.
+notes: 'Poynt is a payments/POS platform; processor decline outcomes surface on the
+  transaction''s processorResponse object rather than as top-level API error codes.
+  A structured decline-code catalog was not published in a public reference at capture
+  time, so no errors/poynt-decline-codes.yml was created (no fabrication).'

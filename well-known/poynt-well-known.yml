@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of Poynt hosts
+note: 'No /.well-known/ discovery documents were served (200) at capture time; the
+  OIDC/OAuth metadata endpoints on services.poynt.net require authentication (401).
+  Absence recorded as valid data; no raw files saved and no WellKnown pointer wired.'
+probes:
+- host: https://www.poynt.com
+  path: /.well-known/security.txt
+  status: 404
+- host: https://docs.poynt.com
+  path: /.well-known/security.txt
+  status: 404
+- host: https://services.poynt.net
+  path: /.well-known/openid-configuration
+  status: 401
+- host: https://services.poynt.net
+  path: /.well-known/oauth-authorization-server
+  status: 401

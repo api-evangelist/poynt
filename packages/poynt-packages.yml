@@ -1,0 +1,35 @@
+generated: '2026-07-20'
+method: searched
+source: npm, PyPI, pkg.go.dev, github.com/poynt
+packages:
+- language: javascript
+  registry: npm
+  name: poynt
+  url: https://www.npmjs.com/package/poynt
+  install: npm install poynt
+  repository: https://github.com/godaddy/poynt-node
+  description: Poynt Node.js SDK
+  official: true
+- language: python
+  registry: pypi
+  name: poynt
+  url: https://pypi.org/project/poynt/
+  install: pip install poynt
+  repository: https://github.com/poynt/poynt-python
+  description: The official Poynt Python SDK
+  official: true
+- language: go
+  registry: pkg.go.dev
+  name: github.com/poynt/poynt-go
+  url: https://pkg.go.dev/github.com/poynt/poynt-go
+  install: go get github.com/poynt/poynt-go
+  repository: https://github.com/poynt/poynt-go
+  description: Golang client for Poynt cloud APIs
+  official: true
+- language: ruby
+  registry: github
+  name: poynt-ruby
+  url: https://github.com/poynt/poynt-ruby
+  repository: https://github.com/poynt/poynt-ruby
+  description: Poynt Ruby SDK (source only; not published to RubyGems)
+  official: true
