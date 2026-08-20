@@ -41,6 +41,15 @@ tags:
 - Company
 - Consumer
 - Payments
+- Point-of-Sale
+- Commerce
+- Merchant Services
+- Payment Processing
+- Developer Platform
+tags_raw:
+- Company
+- Consumer
+- Payments
 - Point of Sale
 - Commerce
 - Merchant Services
@@ -61,6 +70,12 @@ apis:
   humanURL: https://docs.poynt.com/api-reference/index.html
   baseURL: https://services.poynt.net
   tags:
+  - Payments
+  - Point-of-Sale
+  - Order
+  - Transaction
+  - Webhook
+  tags_raw:
   - Payments
   - Point of Sale
   - Orders
